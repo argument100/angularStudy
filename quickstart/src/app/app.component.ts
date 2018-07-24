@@ -10,6 +10,9 @@ import { Component } from '@angular/core';
     h1 {
       color: red;
     }
+    h2 {
+      color: blue;
+    }
   `]
 })
 export class AppComponent  { name = 'First Angular Application'; }
