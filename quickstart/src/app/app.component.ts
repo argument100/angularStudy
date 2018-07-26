@@ -29,11 +29,6 @@ const MEMBERS: Member[] = [
       </li>
     </ul>
   `,
-    // <div><label>id: </label>{{member.id}}</div>
-    // <div>
-    //   <label>name: </label>
-    //   <input type="text" [(ngModel)]="member.name" placeholder="名前">
-    // </div>
 
   styles: [`
     .selected {
