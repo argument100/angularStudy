@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-export class Member {
-  id: number;
-  name: string;
-}
+import { Member } from './member';
 
 const MEMBERS: Member[] = [
   { id: 11, name: '武山 岳大' },
@@ -28,7 +24,7 @@ const MEMBERS: Member[] = [
         <span class="badge">{{member.id}}</span> {{member.name}}
       </li>
     </ul>
-
+    <member-detail [member]="selectedMember"></member-detail>
   `,
 
   styles: [

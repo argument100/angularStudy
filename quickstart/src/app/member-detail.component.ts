@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Member } from './member';
 
 @Component({
-  selector: 'member-detail', // <member-detail></member-detail>
+  selector: 'member-detail', // <member-detail [member]="selectedMember"></member-detail>
   template: `
     <div *ngIf="member">
       <h2>{{member.name}}</h2>
@@ -15,5 +16,5 @@ import { Component } from '@angular/core';
 })
 
 export class MemberDetailComponent {
-  member: Member;
+  @Input() member: Member;
 }
