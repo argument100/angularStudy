@@ -29,14 +29,6 @@ const MEMBERS: Member[] = [
       </li>
     </ul>
 
-    <div *ngIf="selectedMember">
-      <h2>{{selectedMember.name}}</h2>
-      <div><label>id: </label>{{selectedMember.id}}</div>
-      <div>
-        <label>name: </label>
-        <input type="text" [(ngModel)]="selectedMember.name" placeholder="名前">
-      </div>
-    </div>
   `,
 
   styles: [
