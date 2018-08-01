@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Member } from './member';
 
 import { MemberService } from './member.service';
@@ -69,18 +69,23 @@ import { MemberService } from './member.service';
   ],
   providers: [ MemberService ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = "自社社員名簿";
-  members = Member[];
+  members: Member[];
   selectedMember: Member;
 
   constructor(private memberService: MemberService) { }
+
+  ngOnInit(): void {
+    // constructor実行後、初期化時に呼ばれるコールバック
+    this.getMembers();
+  }
 
   onSelect(member: Member): void {
     this.selectedMember = member;
   }
 
   getMembers(): void {
-    this.members = this.memberService.getMembers();
+    this.memberService.getMembers().then(members => this.members = members);
   }
 }
